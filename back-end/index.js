@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 2020;
 const path = require("path");
+const baseuser = require('./controller/user')
 // 内置中间件 express.static 返回静态文件
 app.use("/static", express.static(path.join(__dirname, "public")));
 // 内置中间件 json包裹和解析
@@ -12,6 +13,11 @@ const users = [
   { id: 2, name: "miki" },
   { id: 3, name: "jessie" },
 ];
+
+app.get('/api/baseusers',baseuser.getList);
+
+
+
 // 直接获取所有用户
 app.get("/api/users", (req, res) => {
   res.json(users).end();
