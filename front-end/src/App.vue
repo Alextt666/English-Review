@@ -11,7 +11,7 @@
 
 <script>
 import Lottie from "@comp/Lottie";
-
+import {getWords} from './api/request';
 export default {
   name: "App",
   data() {
@@ -28,7 +28,10 @@ export default {
     Lottie,
   },
   mounted() {
-    console.log('app-root')
+    console.log('app-root');
+    getWords().then(res=>{
+      console.log(res,'res')
+    })
   },
 };
 </script>

@@ -2,7 +2,12 @@ const express = require("express");
 const app = express();
 const port = 2020;
 const path = require("path");
-const baseuser = require('./controller/user')
+const baseuser = require("./controller/user");
+const words = require("./controller/words");
+const cors = require("cors");
+
+app.use(cors());
+
 // 内置中间件 express.static 返回静态文件
 app.use("/static", express.static(path.join(__dirname, "public")));
 // 内置中间件 json包裹和解析
@@ -11,12 +16,14 @@ app.use(express.json());
 const users = [
   { id: 1, name: "alex" },
   { id: 2, name: "miki" },
-  { id: 3, name: "jessie" },
+  { id: 3, name: "11" },
 ];
 
-app.get('/api/baseusers',baseuser.getList);
+app.get("/api/baseusers", baseuser.getList);
 
+// 查询所有单词
 
+app.get("/api/words", words.getList);
 
 // 直接获取所有用户
 app.get("/api/users", (req, res) => {

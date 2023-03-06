@@ -7,7 +7,6 @@ import registerSvgIcon from "./icons";
 import { plugin as vueTyped } from 'vue3-typed.js';
 
 
-
 const app = createApp(App);
 
 app.use(vueTyped);
