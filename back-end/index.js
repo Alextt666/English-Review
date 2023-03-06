@@ -20,7 +20,7 @@ const users = [
 ];
 
 app.get("/api/baseusers", baseuser.getAllList);
-app.get("/api/alex", baseuser.getByName);
+app.get("/api/baseusers/:name", baseuser.getByName);
 
 // 查询所有单词
 
@@ -30,7 +30,10 @@ app.get("/api/words", words.getList);
 app.get("/api/users", (req, res) => {
   res.json(users).end();
 });
-
+// 错误捕获 
+app.use(function (err, req, res, next) {
+  console.log(err.message);
+})
 // 获取指定Id 用户
 app.get("/api/users/:id", (req, res) => {
   let user = users.find((item) => item.id === parseInt(req.params.id));
@@ -92,6 +95,7 @@ app.delete("/api/users/:id", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
+
 
 app.listen(port, () => {
   console.log(`Expample app is listening on port ${port}`);
