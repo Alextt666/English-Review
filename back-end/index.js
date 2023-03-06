@@ -19,7 +19,8 @@ const users = [
   { id: 3, name: "11" },
 ];
 
-app.get("/api/baseusers", baseuser.getList);
+app.get("/api/baseusers", baseuser.getAllList);
+app.get("/api/alex", baseuser.getByName);
 
 // 查询所有单词
 
