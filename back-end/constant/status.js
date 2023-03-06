@@ -10,6 +10,10 @@ const status = {
     LACK:{
       code:403,
       msg:'缺少参数'
+    },
+    NONE:{
+      code:404,
+      msg:'未查询到结果'
     }
   }
   
