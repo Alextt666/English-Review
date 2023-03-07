@@ -1,10 +1,10 @@
 <template>
   <div class="dashbord-wrapper flex-ar">
     <div class="dashbord-item flex-center">
-      <router-link to="analyze">Analyze</router-link>
+      <router-link to="analyze">Start</router-link>
     </div>
     <div class="dashbord-item flex-center">
-      <div @click="handleAutoStart">AutoStart</div>
+      <div @click="handleAutoStart">Add-New</div>
     </div>
   </div>
 </template>
