@@ -11,16 +11,17 @@ export default {
   activated() {
     console.log("actived");
   },
+  deactivated(){
+    console.log("deactived");
+  },
   data() {
     return {};
   },
   methods: {
-    handleBordReady() {
-      this.$emit("page-ready");
-    },
+   
   },
   mounted() {
-    setTimeout(this.handleBordReady, 1000);
+   
   },
   components: {
     DashBord,

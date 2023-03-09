@@ -4,14 +4,13 @@
   </transition>
   <router-view v-slot="{ Component }">
     <keep-alive>
-      <component :is="Component" @page-ready="handlePageReady"/>
+      <component :is="Component" />
     </keep-alive>
   </router-view>
 </template>
 
 <script>
 import Lottie from "@comp/Lottie";
-import {getWords} from './api/request';
 export default {
   name: "App",
   data() {
@@ -19,24 +18,31 @@ export default {
       animateShow: true,
     };
   },
-  methods:{
-    handlePageReady(){
-      this.animateShow = !this.animateShow;
-    }
+  methods: {
+    handlePageReady() {
+      const isShow = window.sessionStorage.getItem("animateShow");
+      if (isShow === 'false') {
+        this.animateShow = false;
+      } else {
+        setTimeout(() => {
+          this.animateShow = false;
+          window.sessionStorage.setItem("animateShow", false);
+        }, 1000);
+      }
+    },
+  },
+  mounted() {
+    this.handlePageReady();
   },
   components: {
     Lottie,
   },
-  mounted() {
-    console.log('app-root');
-    getWords().then(res=>{
-      console.log(res,'res')
-    })
-  },
 };
 </script>
 
+
 <style lang="scss" src="./assets/common.scss" />
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

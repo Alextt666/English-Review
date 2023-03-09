@@ -1,5 +1,6 @@
 import DataAnalyze from "@comp/DataStructer";
 import Main from "@comp/Main.vue";
+import AddOne from "@comp/AddOne";
 import { createRouter, createWebHashHistory } from "vue-router";
 
 // 2. 定义一些路由
@@ -8,6 +9,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
     { path: "/", component: Main },
     { path: "/analyze", component: DataAnalyze },
+    { path: "/addone", component: AddOne },
 ];
 
 // 3. 创建路由实例并传递 `routes` 配置

@@ -4,7 +4,7 @@
       <router-link to="analyze">Start</router-link>
     </div>
     <div class="dashbord-item flex-center">
-      <div @click="handleAutoStart">Add-New</div>
+      <router-link to="addone">Add-New</router-link>
     </div>
   </div>
 </template>
@@ -12,11 +12,7 @@
 export default {
   name: "Dash-wrapper",
   methods: {
-    handleAutoStart() {
-      window.location.href = "weixin://";
-      window.location.href = "lark://";
-      // window.open('lark://');
-    },
+   
   },
 };
 </script>
