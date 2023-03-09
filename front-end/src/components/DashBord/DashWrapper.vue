@@ -17,6 +17,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '@/assets/globalColor.scss';
 .dashbord-wrapper {
   width: 30vw;
   position: absolute;
@@ -26,7 +27,7 @@ export default {
     width: 8rem;
     height: 6rem;
     border-radius: 15px;
-    background: #aec1c1;
+    background: $color-primary-gray;
     box-shadow: -20px 20px 29px #94a4a4, 20px -20px 29px #c8dede;
     transition: all 0.7s;
     cursor: pointer;
