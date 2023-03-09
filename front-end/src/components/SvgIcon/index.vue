@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .svg-icon {
   width: 1.7em;
   height: 1.7em;
@@ -43,5 +43,9 @@ export default {
 .success-class {
   width: 1em;
   height: 1em;
+}
+.icon{
+  width: 1.2em;
+  height: 1.2em;
 }
 </style>
